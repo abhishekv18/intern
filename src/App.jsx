@@ -93,9 +93,9 @@ const LandingPage = () => {
               y1={i * 60}
               x2="960"
               y2={i * 60}
-              stroke="#374151"
+              stroke="#4B5563"
               strokeWidth="0.5"
-              opacity="0.3"
+              opacity="0.4"
               strokeDasharray="4 4"
             />
           ))}
@@ -127,7 +127,7 @@ const LandingPage = () => {
         </svg>
         
      
-        <div className="absolute bottom-0 left-0 right-0 flex justify-between px-2 text-xs text-gray-500">
+        <div className="absolute bottom-0 left-0 right-0 flex justify-between px-2 text-xs text-gray-400">
           {[2, 6, 10, 14, 18, 22, 26, 30].map(day => (
             <span key={day}>{day}</span>
           ))}
@@ -137,22 +137,30 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-100 font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-[#151517] text-gray-100 font-sans overflow-x-hidden">
     
+      {/* Subtle background pattern */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-3">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(to right, #374151 1px, transparent 1px),
+                           linear-gradient(to bottom, #374151 1px, transparent 1px)`,
+          backgroundSize: '40px 40px',
+        }} />
+      </div>
+
+      {/* Subtle gradient blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div 
-          className="absolute top-1/4 -left-48 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: '8s' }}
+          className="absolute top-1/4 left-1/4 w-80 h-80 bg-indigo-600/5 rounded-full blur-3xl"
         />
         <div 
-          className="absolute bottom-1/4 -right-48 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
-          style={{ animationDuration: '10s', animationDelay: '2s' }}
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-600/5 rounded-full blur-3xl"
         />
       </div>
 
     
       
- <nav className="relative z-50 border-b border-white/5 backdrop-blur-xl bg-gray-950/50">
+ <nav className="relative z-50 ">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             
@@ -161,7 +169,7 @@ const LandingPage = () => {
                 <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
                   <span className="text-white font-bold text-lg">U</span>
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                <span className="text-xl font-bold text-white">
                   Untitled UI
                 </span>
               </div>
@@ -228,7 +236,7 @@ const LandingPage = () => {
                 About us
               </button>
               <div className="pt-4 space-y-2">
-                <button className="block w-full px-5 py-2.5 text-gray-300 hover:text-white transition-colors duration-200 border border-gray-700 rounded-lg">
+                <button className="block w-full px-5 py-2.5 text-gray-300 hover:text-white transition-colors duration-200 border border-gray-800 rounded-lg">
                   Dashboard
                 </button>
                 <button className="block w-full px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white rounded-lg font-medium">
@@ -245,35 +253,35 @@ const LandingPage = () => {
          <section className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-32 flex flex-col items-center text-center">
              {/* Announcement badge */}
              <div 
-               className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-gray-800/80 to-gray-900/80 border border-white/10 rounded-full mb-6 backdrop-blur-sm group cursor-pointer hover:border-indigo-500/50 transition-all duration-300 animate-fadeIn"
+               className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r border border-gray-800/80 rounded-full mb-6 backdrop-blur-sm group cursor-pointer hover:border-indigo-500/50 transition-all duration-300 animate-fadeIn"
                style={{ animationDelay: '0.2s' }}
              >
-               <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-               <span className="text-xs text-gray-300">We just raised a $2m seed round</span>
-               <span className="text-indigo-400 text-xs group-hover:translate-x-1 transition-transform duration-200">
+               <span className="w-2 h-2 bg-emerald-500 rounded-full" />
+               <span className="text-sm text-gray-300">We just raised a $2m seed round</span>
+               <span className="text-indigo-400 text-sm group-hover:translate-x-1 transition-transform duration-200">
                  Read →
                </span>
              </div>
      
              {/* Main headline */}
              <h1 
-               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight animate-fadeIn"
+               className="text-5xl md:text-6xl lg:text-[72px] font-bold mb-6 leading-tight"
                style={{ 
                  animationDelay: '0.4s',
                  fontFamily: '"Space Grotesk", "Helvetica Neue", sans-serif'
                }}
              >
-               <span className="bg-gradient-to-br from-white via-gray-100 to-gray-400 bg-clip-text text-transparent block">
+               <span className="text-white block">
                  Effortless digital stores
                </span>
-               <span className="bg-gradient-to-br from-white via-gray-100 to-gray-400 bg-clip-text text-transparent block">
+               <span className="text-white block">
                  for skilled creators
                </span>
              </h1>
      
              {/* Subtitle */}
              <p 
-               className="text-base md:text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed animate-fadeIn mx-auto"
+               className="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed animate-fadeIn mx-auto"
                style={{ animationDelay: '0.6s' }}
              >
                A complete online selling platform with simple store setup, robust marketing tools, 
@@ -282,14 +290,14 @@ const LandingPage = () => {
      
              {/* CTA Buttons */}
              <div 
-               className="flex flex-wrap gap-3 animate-fadeIn justify-center"
+               className="flex flex-wrap gap-4 animate-fadeIn justify-center"
                style={{ animationDelay: '0.8s' }}
              >
-               <button className="group px-5 py-2.5 bg-gray-800/50 hover:bg-gray-800 border border-gray-700 hover:border-gray-600 text-white rounded-lg font-medium transition-all duration-200 flex items-center gap-2 hover:scale-105 transform text-sm">
-                 <Play size={16} className="group-hover:scale-110 transition-transform duration-200" />
+               <button className="group px-6 py-3.5 bg-gray-900/80 hover:bg-gray-900 border border-gray-800 hover:border-gray-700 text-white rounded-lg font-medium transition-all duration-200 flex items-center gap-2 hover:scale-105 transform text-base">
+                 <Play size={18} className="group-hover:scale-110 transition-transform duration-200" />
                  How it works
                </button>
-               <button className="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-lg font-medium transition-all duration-200 shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-105 transform text-sm">
+               <button className="px-7 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-lg font-medium transition-all duration-200 shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-105 transform text-base">
                  Start free trial
                </button>
              </div>
@@ -298,7 +306,7 @@ const LandingPage = () => {
     
       <section className="relative z-10 max-w-7xl mx-auto px-6 pb-20">
         <div 
-          className="bg-gradient-to-br from-gray-900/90 to-gray-950/90 border border-white/10 rounded-2xl p-8 backdrop-blur-xl shadow-2xl animate-fadeIn"
+          className="bg-gradient-to-br from-gray-900/90 to-gray-950/90 border border-gray-800/80 rounded-2xl p-8 backdrop-blur-md shadow-2xl animate-fadeIn"
           style={{ 
             animationDelay: '1s',
             transform: `translateY(${scrollY * 0.1}px)`,
@@ -306,7 +314,7 @@ const LandingPage = () => {
           }}
         >
       
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 pb-6 border-b border-white/5">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 pb-6 border-b border-gray-800/80">
             <div className="flex items-center gap-4 mb-4 md:mb-0">
               <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold text-xl">I</span>
@@ -318,26 +326,30 @@ const LandingPage = () => {
             </div>
 
             <div className="flex items-center gap-2 text-sm">
-              <button className="px-4 py-2 bg-gray-800 hover:bg-gray-750 border border-gray-700 rounded-lg transition-colors duration-200">
+              <button className="px-4 py-2 bg-gray-900/80 hover:bg-gray-900 border border-gray-800 rounded-lg transition-colors duration-200 text-gray-300">
                 12 months
               </button>
-              <button className="px-4 py-2 bg-gray-800 hover:bg-gray-750 border border-gray-700 rounded-lg transition-colors duration-200">
+              <button className="px-4 py-2 bg-gray-900/80 hover:bg-gray-900 border border-gray-800 rounded-lg transition-colors duration-200 text-gray-300">
                 30 days
               </button>
-              <button className="px-4 py-2 bg-indigo-600/20 border border-indigo-500/50 text-indigo-300 rounded-lg">
+              <button className="px-4 py-2 bg-indigo-600/30 border border-indigo-500/50 text-indigo-300 rounded-lg font-medium">
                 7 days
               </button>
-              <button className="px-4 py-2 bg-gray-800 hover:bg-gray-750 border border-gray-700 rounded-lg transition-colors duration-200">
+              <button className="px-4 py-2 bg-gray-900/80 hover:bg-gray-900 border border-gray-800 rounded-lg transition-colors duration-200 text-gray-300">
                 24 hours
               </button>
-           
             </div>
+          </div>
+
+          {/* Date range text */}
+          <div className="text-sm text-gray-400 mb-6">
+            1 Jan 2025 – 31 Jan 2025
           </div>
 
     
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         
-            <div className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-white/5 rounded-xl p-6 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10">
+            <div className="group bg-gradient-to-br from-gray-900/80 to-gray-950/80 border border-gray-800/80 rounded-xl p-6 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-gray-400 text-sm font-medium">Sales</span>
                 <DollarSign className="text-emerald-500" size={20} />
@@ -354,7 +366,7 @@ const LandingPage = () => {
             </div>
 
          
-            <div className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-white/5 rounded-xl p-6 hover:border-purple-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
+            <div className="group bg-gradient-to-br from-gray-900/80 to-gray-950/80 border border-gray-800/80 rounded-xl p-6 hover:border-purple-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-gray-400 text-sm font-medium">Orders</span>
                 <ShoppingBag className="text-indigo-500" size={20} />
@@ -371,7 +383,7 @@ const LandingPage = () => {
             </div>
 
          
-            <div className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-white/5 rounded-xl p-6 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+            <div className="group bg-gradient-to-br from-gray-900/80 to-gray-950/80 border border-gray-800/80 rounded-xl p-6 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-gray-400 text-sm font-medium">Average order value</span>
                 <BarChart3 className="text-purple-500" size={20} />
@@ -389,7 +401,7 @@ const LandingPage = () => {
           </div>
 
        
-          <div className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 border border-white/5 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-gray-900/60 to-gray-950/60 border border-gray-800/80 rounded-xl p-6">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h3 className="text-lg font-semibold text-white mb-1">Sales</h3>
@@ -407,8 +419,6 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-
-    
 
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
