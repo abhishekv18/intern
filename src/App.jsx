@@ -139,17 +139,28 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-[#151517] text-gray-100 font-sans overflow-x-hidden">
     
-      {/* Subtle background pattern */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-3">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(to right, #374151 1px, transparent 1px),
-                           linear-gradient(to bottom, #374151 1px, transparent 1px)`,
-          backgroundSize: '40px 40px',
-        }} />
-      </div>
-
-      {/* Subtle gradient blobs */}
+      {/* Diagonal grid pattern on left side - extends to Products area */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {/* Left side diagonal grid pattern */}
+        <div className="absolute left-0 top-0 h-full opacity-[0.08]" style={{ width: '350px' }}>
+          <div 
+            className="absolute inset-0" 
+            style={{
+              backgroundImage: `
+                repeating-linear-gradient(
+                 -45deg,
+                  transparent,
+                  transparent 35px,
+                  rgba(255, 255, 255, 0.5) 35px,
+                  rgba(255, 255, 255, 0.5) 36px
+                )
+              `,
+              backgroundSize: '50px 50px'
+            }} 
+          />
+        </div>
+        
+        {/* Subtle gradient blobs */}
         <div 
           className="absolute top-1/4 left-1/4 w-80 h-80 bg-indigo-600/5 rounded-full blur-3xl"
         />
@@ -258,6 +269,7 @@ const LandingPage = () => {
              >
                <span className="w-2 h-2 bg-emerald-500 rounded-full" />
                <span className="text-sm text-gray-300">We just raised a $2m seed round</span>
+               <span className="h-4 w-px bg-gray-700/70" />
                <span className="text-indigo-400 text-sm group-hover:translate-x-1 transition-transform duration-200">
                  Read →
                </span>
